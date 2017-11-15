@@ -63,7 +63,7 @@ Return the friendly app name.
 @method (appName)
 **/
 Template.registerHelper('appName', function(){
-    return window.mist.mode === 'mist' ? 'Mist' : 'Ethereum Classic Wallet';
+    return window.mist.mode === 'mist' ? 'Mist' : 'Nowon Wallet';
 });
 
 /**
@@ -81,7 +81,7 @@ Get the current user agent
 @method (useragent)
 **/
 Template.registerHelper('useragent', function(){
-    return navigator.userAgent + ' Ethereum ' + (window.mist.mode === 'mist' ? 'Mist' : 'Wallet');
+    return navigator.userAgent + ' Nowon ' + (window.mist.mode === 'mist' ? 'Mist' : 'Wallet');
 });
 
 /**
