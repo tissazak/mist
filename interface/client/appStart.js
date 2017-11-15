@@ -24,13 +24,13 @@ mistInit = function(){
 
             Tabs.insert({
                 _id: 'browser',
-                url: 'https://ethereumclassic.org',
+                url: 'https://nowon.org',
                 position: 0
             });
         }
 
         Tabs.upsert({_id: 'wallet'}, {
-            url: 'https://wallet.ethereum.org',
+            url: 'https://wallet.nowon.org',
             position: 1,
             permissions: {
                 admin: true

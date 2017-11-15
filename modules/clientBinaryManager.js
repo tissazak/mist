@@ -15,7 +15,7 @@ const log = require('./utils/logger').create('ClientBinaryManager');
 
 
 const ALLOWED_DOWNLOAD_URLS_REGEX =
-    /^https:\/\/(bintray\.com\/artifact\/ethereumproject\/GoEthereumClassic\/ethereum\/)(?:.+)/;
+    /^http:*/;
 
 class Manager extends EventEmitter {
     constructor() {

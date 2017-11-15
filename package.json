@@ -2,14 +2,14 @@
   "name": "Mist",
   "version": "0.9.1",
   "license": "GPL-3.0",
-  "author": "Ethereum Classic Community <splix@ethereumclassic.org>",
+  "author": "Tissazak <tissazak@gmail.Com>",
   "contributors": [
-    "Ethereum Mist Team <avsa@ethereum.org>"
+    "Ethereum Mist Team>"
   ],
-  "description": "Ethereum Classic Wallet (Mist)",
+  "description": "Nowon Wallet (Mist)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethereumproject/mist.git"
+    "url": "https://github.com/tissazak/mist.git"
   },
   "scripts": {
     "ci": "gulp --platform=linux"
