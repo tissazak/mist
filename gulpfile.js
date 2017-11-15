@@ -84,7 +84,7 @@ gulp.task('set-variables-mist', () => {
 });
 gulp.task('set-variables-wallet', () => {
     type = 'wallet';
-    applicationName = 'Ethereum Classic Wallet';
+    applicationName = 'Nowon Wallet';
 });
 
 
@@ -197,9 +197,9 @@ gulp.task('bundling-interface', ['switch-production'], (cb) => {
                 cb(err);
             });
         } else {
-            console.log(`Pulling https://github.com/ethereumproject/meteor-dapp-wallet/tree/${options.walletSource} "${options.walletSource}" branch...`);
+            console.log(`Pulling https://github.com/tissazak/meteor-dapp-wallet/tree/${options.walletSource} "${options.walletSource}" branch...`);
             exec(`cd interface/ && meteor-build-client ../dist_${type}/app/interface/ -p "" &&` +
-                `cd ../dist_${type}/ && git clone --depth 1 https://github.com/ethereumproject/meteor-dapp-wallet.git && cd meteor-dapp-wallet/app && meteor-build-client ../../app/interface/wallet -p "" && cd ../../ && rm -rf meteor-dapp-wallet`, (err, stdout) => {
+                `cd ../dist_${type}/ && git clone --depth 1 https://github.com/tissazak/meteor-dapp-wallet.git && cd meteor-dapp-wallet/app && meteor-build-client ../../app/interface/wallet -p "" && cd ../../ && rm -rf meteor-dapp-wallet`, (err, stdout) => {
                 console.log(stdout);
 
                 cb(err);
