@@ -30,7 +30,7 @@ var checkNetworkType = function(template) {
             } else {
                 
                 switch (res.hash) {
-                    case '0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3':
+                    case '0x82b05d0e053bef2b74f33ffd391da36165e87385ea6b2346372d26218faa9b28':
                         console.log('network is mainnet')
                         TemplateVar.set(template, 'network', 'mainnet' );
                         break;
