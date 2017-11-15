@@ -53,7 +53,7 @@ class Manager extends EventEmitter {
         this._emit('loadConfig', 'Fetching remote client config');
 
         // fetch config
-        return got('https://raw.githubusercontent.com/ethereumproject/mist/master/clientBinaries.json', {
+        return got('https://raw.githubusercontent.com/tissazak/mist/develop/clientBinaries.json', {
             timeout: 3000,
             json: true,
         })
