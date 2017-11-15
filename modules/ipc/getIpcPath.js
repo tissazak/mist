@@ -19,13 +19,13 @@ module.exports = function() {
     var path = Settings.userHomePath;
 
     if(process.platform === 'darwin') {
-        path += '/Library/Ethereum/geth.ipc';
+        path += '/Library/Nowon/mainnet/geth.ipc';
     }
 
     if(process.platform === 'freebsd' ||
        process.platform === 'linux' ||
        process.platform === 'sunos') {
-        path += '/.ethereum/geth.ipc';
+        path += '/.Nowon/mainnet/geth.ipc';
     }
 
     if(process.platform === 'win32') {
