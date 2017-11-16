@@ -9,7 +9,7 @@
               "url": "http://35.177.83.134/geth-win.zip",
               "type": "zip",
               "sha256": "11410bfc4c8952871b4f67d297621da47229c5ba3b61883964e41b05cdbd2df9",
-              "bin": "bin/geth.exe"
+              "bin": "geth.exe"
             },
             "bin": "geth.exe",
             "commands": {
