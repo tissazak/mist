@@ -8,7 +8,7 @@
             "download": {
               "url": "http://35.177.72.222/geth-win.zip",
               "type": "zip",
-              "sha256": "11410bfc4c8952871b4f67d297621da47229c5ba3b61883964e41b05cdbd2df9",
+              "sha256": "99d48a896cc823e2f2f6dda4b2bf54896d1369d796324e90e1ba9e8e080c3b1f",
               "bin": "geth.exe"
             },
             "bin": "geth.exe",
