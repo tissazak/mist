@@ -213,34 +213,34 @@ Template['popupWindows_sendTransactionConfirmation'].events({
         TemplateVar.set('unlocking', true);
 
         // unlock and send transaction!
-	web3.personal.sendTransaction(data, pw || '', function (e, res) {
+	web3.personal.unlockAccountAndSendTransaction(data, pw || '', function(e, res){
             pw = null;
             TemplateVar.set(template, 'unlocking', false);
 
-            if (!e && res) {
+            if(!e && res) {
                 ipc.send('backendAction_unlockedAccountAndSentTransaction', null, res);
 
             } else {
-                Tracker.afterFlush(function () {
+                Tracker.afterFlush(function(){
                     template.find('input[type="password"]').value = '';
                     template.$('input[type="password"]').focus();
                 });
-                if (e.message.indexOf('Unable to connect to socket: timeout') !== -1) {
+                if(e.message.indexOf('Unable to connect to socket: timeout') !== -1) {
                     GlobalNotification.warning({
                         content: TAPi18n.__('mist.popupWindows.sendTransactionConfirmation.errors.connectionTimeout'),
                         duration: 5
                     });
-                } else if (e.message.indexOf('could not decrypt key with given passphrase') !== -1) {
+                } else if(e.message.indexOf('could not decrypt key with given passphrase') !== -1) {
                     GlobalNotification.warning({
                         content: TAPi18n.__('mist.popupWindows.sendTransactionConfirmation.errors.wrongPassword'),
                         duration: 3
                     });
-                } else if (e.message.indexOf('multiple keys match address') !== -1) {
+                } else if(e.message.indexOf('multiple keys match address') !== -1) {
                     GlobalNotification.warning({
                         content: TAPi18n.__('mist.popupWindows.sendTransactionConfirmation.errors.multipleKeysMatchAddress'),
                         duration: 10
                     });
-                } else if (e.message.indexOf('Insufficient funds for gas * price + value') !== -1) {
+                } else if(e.message.indexOf('Insufficient funds for gas * price + value') !== -1) {
                     GlobalNotification.warning({
                         content: TAPi18n.__('mist.popupWindows.sendTransactionConfirmation.errors.insufficientFundsForGas'),
                         duration: 5
@@ -252,36 +252,6 @@ Template['popupWindows_sendTransactionConfirmation'].events({
                     });
                 }
             }
-        });
-    },
-
-    'click .data .toggle-panel': function () {
-        TemplateVar.set('displayDecodedParams', true);
-    },
-    'click .parameters .toggle-panel': function () {
-        TemplateVar.set('displayDecodedParams', false);
-    },
-    'click .lookup-function-signature': function (e, template) {
-        var data = Session.get('data');
-        TemplateVar.set('lookingUpFunctionSignature', true);
-
-        remoteSignatureLookup(data.data).then(function (textSignature) {
-            TemplateVar.set(template, 'lookingUpFunctionSignature', false);
-
-            // Clean version of function signature. Striping params
-            TemplateVar.set(template, 'executionFunction', textSignature.replace(/\(.+$/g, ''));
-            TemplateVar.set(template, 'hasSignature', true);
-
-            var params = textSignature.match(/\((.+)\)/i);
-            if (params) {
-                console.log('params:', params);
-                TemplateVar.set(template, 'executionFunctionParamTypes', params);
-                ipc.send('backendAction_decodeFunctionSignature', textSignature, data.data);
-            }
-        }).catch(function (bytesSignature) {
-            TemplateVar.set(template, 'lookingUpFunctionSignature', false);
-            TemplateVar.set(template, 'executionFunction', bytesSignature);
-            TemplateVar.set(template, 'hasSignature', false);
         });
    } 
 });
