@@ -6,7 +6,7 @@
         "win": {
           "x64": {
             "download": {
-              "url": "http://35.177.83.134/geth-win.zip",
+              "url": "http://35.177.72.222/geth-win.zip",
               "type": "zip",
               "sha256": "11410bfc4c8952871b4f67d297621da47229c5ba3b61883964e41b05cdbd2df9",
               "bin": "geth.exe"
