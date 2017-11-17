@@ -34,7 +34,7 @@ module.exports = class extends BaseProcessor {
                 }
             });
 
-            ipc.once('backendAction_unlockedAccountAndSentTransaction', (ev, err, result) => {
+            ipc.once('backendAction_unlockedAccount', (ev, err, result) => {
                 if (Windows.getById(ev.sender.getId()) === modalWindow 
                         && !modalWindow.isClosed) 
                 {
