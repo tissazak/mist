@@ -213,12 +213,12 @@ Template['popupWindows_sendTransactionConfirmation'].events({
         TemplateVar.set('unlocking', true);
 
         // unlock and send transaction!
-	web3.personal.unlockAccountAndSendTransaction(data, pw || '', function(e, res){
+	web3.personal.unlockAccount(data, pw || '', function(e, res){
             pw = null;
             TemplateVar.set(template, 'unlocking', false);
 
             if(!e && res) {
-                ipc.send('backendAction_unlockedAccountAndSentTransaction', null, res);
+                ipc.send('backendAction_unlockedAccount', null, res);
 
             } else {
                 Tracker.afterFlush(function(){
