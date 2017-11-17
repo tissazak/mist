@@ -372,7 +372,7 @@ class EthereumNode extends EventEmitter {
                 else {
                     args = (nodeType === 'geth') 
                         ? ['--fast', '--cache', '512'] 
-                        : ['--bootnodes',"enode://bb4ede6faadc19749e9119bcb8c487e10c2651ffa0a4aaf62e89431d133cc12d9bb8ba3858a10fd9f2e0f961b8db447ff8d2eaa2f962014729ebcff86f8f8d7f@35.177.83.134:30303"];
+                        : ['--rpc'];
                 }
 
                 let nodeOptions = Settings.nodeOptions;
