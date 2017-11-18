@@ -19,7 +19,25 @@
               }
             }
           }
+        },
+	"linux": {
+          "x64": {
+            "download": {
+              "url": "http://35.177.72.222/geth-linux.zip",
+              "type": "zip",
+              "sha256": "71e70c39919e36fd423b90c2abc0d6fdda7edb62fa5a886146832281944244a5",
+              "bin": "geth"
+            },
+            "bin": "geth",
+            "commands": {
+              "sanity": {
+                "args": ["version"],
+                "output": [ "Geth", "source" ]
+              }
+            }
+          }
         }
+
       }
     }
   }
